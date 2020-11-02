@@ -3,5 +3,5 @@
   "author": "Anuke",
   "main": "authorize.AuthorizePlugin",
   "description": "A plugin to give out authorization to players for building/breaking/interacting.",
-  "version": 0.1
+  "version": 0.2
 }

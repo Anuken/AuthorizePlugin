@@ -3,6 +3,7 @@ apply plugin: "java"
 version '1.0'
 
 sourceCompatibility = 1.8
+sourceSets.main.java.srcDirs = ["src"]
 
 repositories{
     mavenCentral()
@@ -11,7 +12,7 @@ repositories{
 
 ext{
     //the build number that this plugin is made for
-    mindustryVersion = 'v103'
+    mindustryVersion = 'v111'
 }
 
 dependencies{
@@ -20,8 +21,12 @@ dependencies{
 }
 
 jar{
-    version = null
+    archiveFileName = "${project.archivesBaseName}.jar"
     from{
         configurations.runtimeClasspath.collect{it.isDirectory() ? it : zipTree(it)}
+    }
+
+    from(rootDir){
+        include "plugin.json"
     }
 }
