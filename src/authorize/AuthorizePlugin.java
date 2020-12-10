@@ -88,9 +88,9 @@ public class AuthorizePlugin extends Plugin{
     }
 
     private void message(Player player){
-        if(Time.time() - messageTime.get(player, 0) >= messageSpacing){
+        if(Time.time - messageTime.get(player, 0) >= messageSpacing){
             player.sendMessage(message);
-            messageTime.put(player, Time.time());
+            messageTime.put(player, Time.time);
         }
     }
 
